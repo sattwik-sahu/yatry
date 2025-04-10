@@ -41,4 +41,4 @@ def optimize_dep_time(
     def _time_objective_func(x: float) -> float:
         return float(-np.sum([norm.logpdf(x, mu, std) for mu, std in zip(mus, stds)]))
 
-    return float(golden(func=_time_objective_func, brack=(brack_start, brack_end)))
+    return float(golden(func=_time_objective_func, brack=(brack_start, brack_end)))  # type: ignore
