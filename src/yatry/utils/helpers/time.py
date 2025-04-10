@@ -20,24 +20,75 @@ def calc_time_conv_params(
         tuple[float, float]: The mean and std of the normal distribution.
     """
     f_mean = (t_min + t_max) / 2
-    f_std = float(-stats.norm.ppf((1 - m_range) / 2) * (t_max - t_min) / 2)
+    z = float(stats.norm.ppf((1 + m_range) / 2))
+    f_std = (t_max - t_min) / (2 * z)
 
     return f_mean, f_std
 
 
 def bhattacharyya_distance(u1: float, u2: float, std1: float, std2: float) -> float:
+    """
+    Computes the Bhattacharyya distance between two normal distributions.
+
+    This distance measures the similarity between two probability distributions.
+    A smaller distance implies greater overlap and hence greater similarity.
+
+    Args:
+        u1 (float): Mean of the first distribution.
+        u2 (float): Mean of the second distribution.
+        std1 (float): Standard deviation of the first distribution.
+        std2 (float): Standard deviation of the second distribution.
+
+    Returns:
+        float: The Bhattacharyya distance between the two distributions.
+    """
     return 0.25 * ((u1 - u2) ** 2 / (std1 + std2)) + 0.5 * np.log(
         (std1 + std2) / (2 * np.sqrt(std1 * std2))
     )
 
 
 def bhattacharyya_coeff(u1: float, u2: float, std1: float, std2: float) -> float:
+    """
+    Computes the Bhattacharyya coefficient between two normal distributions.
+
+    This coefficient measures the amount of overlap between two distributions.
+    It lies in the range [0, 1], where 1 indicates complete overlap (identical
+    distributions), and 0 indicates no overlap.
+
+    Args:
+        u1 (float): Mean of the first distribution.
+        u2 (float): Mean of the second distribution.
+        std1 (float): Standard deviation of the first distribution.
+        std2 (float): Standard deviation of the second distribution.
+
+    Returns:
+        float: The Bhattacharyya coefficient between the two distributions.
+    """
     return np.exp(-bhattacharyya_distance(u1=u1, u2=u2, std1=std1, std2=std2))
 
 
 def time_affinity_score(
     t1_min: float, t2_min: float, t1_max: float, t2_max: float, m_range: float = 0.8
 ) -> float:
+    """
+    Computes a time affinity score between two passengers based on their
+    preferred departure time windows.
+
+    Each passenger's time preference is modeled as a normal distribution.
+    The affinity score is the Bhattacharyya coefficient between these two
+    distributions and reflects how well their preferred departure times align.
+
+    Args:
+        t1_min (float): Earliest preferred departure time of the first passenger.
+        t2_min (float): Earliest preferred departure time of the second passenger.
+        t1_max (float): Latest preferred departure time of the first passenger.
+        t2_max (float): Latest preferred departure time of the second passenger.
+        m_range (float, optional): Proportion of total probability mass that should
+            lie within the preferred departure window. Defaults to 0.8.
+
+    Returns:
+        float: A value in [0, 1] indicating the time affinity between the two passengers.
+    """
     u1, std1 = calc_time_conv_params(t_min=t1_min, t_max=t1_max, m_range=m_range)
     u2, std2 = calc_time_conv_params(t_min=t2_min, t_max=t2_max, m_range=m_range)
     return bhattacharyya_coeff(u1=u1, u2=u2, std1=std1, std2=std2)
