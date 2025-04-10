@@ -75,8 +75,9 @@ def time_affinity_score(
     preferred departure time windows.
 
     Each passenger's time preference is modeled as a normal distribution.
-    The affinity score is the Bhattacharyya coefficient between these two
-    distributions and reflects how well their preferred departure times align.
+    The affinity score is the how much area of the first passenger's time
+    convenience distribution lies between the preferred time range of the
+    second passenger.
 
     Args:
         t1_min (float): Earliest preferred departure time of the first passenger.
@@ -91,4 +92,11 @@ def time_affinity_score(
     """
     u1, std1 = calc_time_conv_params(t_min=t1_min, t_max=t1_max, m_range=m_range)
     u2, std2 = calc_time_conv_params(t_min=t2_min, t_max=t2_max, m_range=m_range)
-    return bhattacharyya_coeff(u1=u1, u2=u2, std1=std1, std2=std2)
+    return min(
+        1,
+        (
+            float(stats.norm.cdf(t2_min, u1, std1))
+            - float(stats.norm.cdf(t2_max, u1, std1))
+        )
+        / m_range,
+    )

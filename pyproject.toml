@@ -9,8 +9,11 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.10.1",
+    "networkx>=3.4.2",
     "numpy>=2.2.4",
     "pandas>=2.2.3",
+    "python-louvain>=0.16",
+    "scikit-learn>=1.6.1",
     "scipy>=1.15.2",
     "seaborn>=0.13.2",
 ]
