@@ -2,6 +2,7 @@ from yatry.utils.models.map import Map
 from yatry.utils.models import Passenger
 from yatry.utils.data.locations import Location
 import numpy as np
+from numpy import typing as npt
 
 
 def get_passenger_route_fare(
@@ -40,7 +41,7 @@ def get_passenger_route_affinity(
 
 def get_passenger_route_affinity_matrix(
     map: Map, passengers: list[Passenger]
-) -> np.ndarray:
+) -> npt.NDArray[np.float64]:
     affs = np.zeros((len(passengers), len(passengers)), dtype=np.float64)
     for i, p1 in enumerate(passengers):
         for j, p2 in enumerate(passengers):
