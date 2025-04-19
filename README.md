@@ -10,10 +10,6 @@ Hassle-Free Ride Sharing powered by Advanced Optimization Algorithms
     ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
-2. Install required python version with `uv` using
-    ```bash
-    uv python install $(cat .python-version)
-    ```
 
 ### Setup
 
@@ -21,7 +17,11 @@ Hassle-Free Ride Sharing powered by Advanced Optimization Algorithms
     ```bash
     git clone https://github.com/<your_username>/yatry
     ```
-2. Create the virtual environment and install dependencies
+2. *(Optional)* Install required python version with `uv` using
+    ```bash
+    uv python install $(cat .python-version)
+    ```
+3. Create the virtual environment and install dependencies
     ```bash
     uv sync
     ```
