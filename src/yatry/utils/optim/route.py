@@ -2,10 +2,10 @@ from yatry.utils.models.tree import Tree
 from yatry.utils.models import Place
 
 
-def find_path(start: Tree[Place], end: Tree[Place]) -> list[Tree[Place]]:
+def find_route(start: Tree[Place], end: Tree[Place]) -> list[Tree[Place]]:
     path = []
     end.make_root()
-    end.show()
+    # end.show()
     node = start
     while node is not end:
         path.append(node)
