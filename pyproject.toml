@@ -16,6 +16,7 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "scipy>=1.15.2",
     "seaborn>=0.13.2",
+    "uuid>=1.30",
 ]
 
 [project.scripts]

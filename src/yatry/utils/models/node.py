@@ -18,7 +18,7 @@ class Node[TValue]:
         self._value = value
 
     def __repr__(self) -> str:
-        return f"{{{self._value}}}"
+        return f"{self._value}"
 
     @property
     def value(self) -> TValue:

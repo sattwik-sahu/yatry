@@ -37,7 +37,7 @@ class Tree[TValue](Node[TValue], Sized):
         if not self._children:
             return super().__repr__()
         else:
-            return f"[{super().__repr__()} >> {self._children}]"
+            return f"[{super().__repr__()} >> ({len(self._children)})]"
 
     def __len__(self) -> int:
         if self.children:
@@ -46,7 +46,7 @@ class Tree[TValue](Node[TValue], Sized):
             return 1
 
     def show(self, indent: int = 0) -> None:
-        print(f"{'#' * indent}{self._value}")
+        print(f"{'|' * indent} {self._value}")
         for child in self._children:
             child.show(indent=indent + 1)
 
