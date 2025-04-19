@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from yatry.utils.models.tree import Tree
 
 
 @dataclass
@@ -21,3 +22,6 @@ class Place:
 class Road:
     ends: set[Place]
     fare: float
+
+
+Route = list[Tree[Place]]
