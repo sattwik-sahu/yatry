@@ -1,27 +1,21 @@
 from dataclasses import dataclass
-from yatry.utils.models.tree import Tree
+from yatry.utils.data.locations import Location
+from datetime import datetime
 
 
 @dataclass
 class Passenger:
     name: str
-    src: object
-    dst: object
-    t_dep_bracket: tuple[float, float]
+    src: Location
+    dst: Location
+    dep_time_range: tuple[datetime, datetime]
 
-
-@dataclass
-class Place:
-    name: str
-
-    def __hash__(self) -> int:
-        return id(self)
+    def get_dep_time_range_num(self) -> tuple[float, float]:
+        t_start, t_end = self.dep_time_range
+        return t_start.timestamp(), t_end.timestamp()
 
 
 @dataclass
 class Road:
-    ends: set[Place]
+    ends: set[Location]
     fare: float
-
-
-Route = list[Tree[Place]]
