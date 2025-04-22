@@ -17,14 +17,12 @@ Hassle-Free Ride Sharing powered by Advanced Optimization Algorithms
     ```bash
     git clone https://github.com/<your_username>/yatry
     ```
-2. *(Optional)* Install required python version with `uv` using
-    ```bash
-    uv python install $(cat .python-version)
-    ```
 3. Create the virtual environment and install dependencies
     ```bash
     uv sync
     ```
+
+> `uv` will install the required Python version automatically from [`pyproject.toml`](./pyproject.toml)
 
 ## Contributing
 
@@ -39,8 +37,9 @@ Hassle-Free Ride Sharing powered by Advanced Optimization Algorithms
 3. Commit your changes
     ```bash
     git add .
-    git commit -m "<feat/fix/chores>:your message here"
+    git commit -m "<your_commit_message>"
     ```
+    > To know more about meaningful commit messages, follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary).
 4. Push your changes to your fork
     ```bash
     git push -u origin <your_branch_name>
