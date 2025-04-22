@@ -6,8 +6,8 @@ from datetime import datetime
 @dataclass
 class Passenger:
     name: str
-    src: Location
-    dst: Location
+    source: Location
+    destination: Location
     dep_time_range: tuple[datetime, datetime]
 
     def get_dep_time_range_num(self) -> tuple[float, float]:

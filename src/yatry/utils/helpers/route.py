@@ -8,7 +8,7 @@ from numpy import typing as npt
 def get_passenger_route_fare(
     map: Map, passenger: Passenger
 ) -> tuple[list[Location], float]:
-    return map.get_route_fare(loc_start=passenger.src, loc_end=passenger.dst)
+    return map.make_trip(loc_start=passenger.source, loc_end=passenger.destination)
 
 
 def get_longest_prefix(
@@ -26,16 +26,20 @@ def get_route_affinity(
     map: Map, route1: list[Location], route2: list[Location]
 ) -> float:
     prefix = get_longest_prefix(route1=route1, route2=route2)
-    fare1 = map.get_fare(route=route1)
-    fare_prefix = map.get_fare(route=prefix)
+    fare1 = map.get_fare_on_route(route=route1)
+    fare_prefix = map.get_fare_on_route(route=prefix)
     return fare_prefix / fare1
 
 
 def get_passenger_route_affinity(
     map: Map, passenger1: Passenger, passenger2: Passenger
 ) -> float:
-    route1 = map._find_route(loc_start=passenger1.src, loc_end=passenger1.dst)
-    route2 = map._find_route(loc_start=passenger2.src, loc_end=passenger2.dst)
+    route1 = map._find_route(
+        loc_start=passenger1.source, loc_end=passenger1.destination
+    )
+    route2 = map._find_route(
+        loc_start=passenger2.source, loc_end=passenger2.destination
+    )
     return get_route_affinity(map=map, route1=route1, route2=route2)
 
 
