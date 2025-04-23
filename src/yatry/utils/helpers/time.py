@@ -91,7 +91,7 @@ def time_affinity_score(
         float: A value in [0, 1] indicating the time affinity between the two passengers.
     """
     u1, std1 = calc_time_conv_params(t_min=t1_min, t_max=t1_max, m_range=m_range)
-    u2, std2 = calc_time_conv_params(t_min=t2_min, t_max=t2_max, m_range=m_range)
+    # u2, std2 = calc_time_conv_params(t_min=t2_min, t_max=t2_max, m_range=m_range)
     return min(
         1,
         (

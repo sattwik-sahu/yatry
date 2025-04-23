@@ -1,81 +1,163 @@
 from yatry.utils.models.tree import Tree
-from yatry.utils.models import Place, Road
+from yatry.utils.models import Passenger
 from yatry.utils.optim.route import find_route
+from yatry.utils.data.locations import Location
+from yatry.utils.models.symm_dict import SymmetricKeyDict
+
+
+type RoadRegistry = SymmetricKeyDict[Location, float]
+type MapNode = Tree[Location]
 
 
 class Map:
-    _roads: list[Road]
-    _tree: Tree[Place]
+    """
+    Implements a map with locations and roads.
 
-    def __init__(self, root: Tree[Place]) -> None:
-        self._roads = []
-        self._tree = root
+    The map here is implemented as a tree instead of a graph to avoid multiple
+    paths between locations to reduce complexity of optimization.
+
+    Attributes:
+        _roads (RoadRegistry): A symmetric dictionary with locations as keys
+            and the fare as the value.
+        _root (Tree[Location]): The root location of the map. This should be the
+            primary point of focus in the region.
+        _locations (dict[Location, MapNode]): A mapping between the `Location` enum
+             and the corresponding nodes in the map.
+    """
+
+    _roads: RoadRegistry
+    _root: Tree[Location]
+    _locations: dict[Location, MapNode]
+
+    def __init__(self, root: Location) -> None:
+        """
+        Initializes a Map object with `root` as the root location.
+
+        Args:
+            root (Location): The `Location` enum item of the primary
+                point of focus of the map.
+        """
+        self._roads = SymmetricKeyDict[Location, float]()
+        self._locations = dict[Location, MapNode]()
+        self.register_location(location=root)
+        self._root = self._locations[root]
+
+    def register_location(self, location: Location) -> None:
+        """
+        Registers a location in the map.
+
+        NOTE:
+        Avoids duplicate entries by checking whether the location is
+        already registed in the map.
+
+        Args:
+            location (Location): The `Location` enum item corresponding
+                to the location to be registered.
+        """
+        if location not in self._locations:
+            node: MapNode = Tree[Location](value=location)
+            self._locations[location] = node
 
     @property
-    def root(self) -> Tree[Place]:
-        return self._tree
+    def root(self) -> Tree[Location]:
+        return self._root
 
-    def add_road(self, place1: Tree[Place], place2: Tree[Place], fare: float) -> None:
-        place1.add_child(child=place2)
-        self._roads.append(Road(ends={place1.value, place2.value}, fare=fare))
+    def add_road(self, loc_from: Location, loc_to: Location, fare: float) -> None:
+        """
+        Adds a road between two locations in the map.
 
-    def find_road(self, place1: Place, place2: Place) -> Road:
-        return [road for road in self._roads if road.ends == {place1, place2}][0]
+        Parameters have `_from` and `_to` suffixes to indicate that the map
+        is implemented as a *tree*. `loc_from` and `loc_to` must be such that
+        the path `(root, loc_from, loc_to)` is present in the map's tree as
+        decided by the user beforehand.
+
+        Args:
+            loc_from (Location): The location from which the road starts.
+            loc_to (Location): The location to which the road goes.
+        """
+        self._locations[loc_from].add_child(child=self._locations[loc_to])
+        self._roads[loc_from, loc_to] = fare
+
+    def get_road_fare(self, loc_1: Location, loc_2: Location) -> float:
+        """
+        Gets the fare to go from `loc_1` to `loc_2` on the map. The ordering
+        of the locations does not matter like `add_road`, as `self._roads`
+        is implemented as a symmetric key dictionary.
+
+        Args:
+            loc_1 (Location): The `Location` at one end of the road.
+            loc_2 (Location): The `Location` at the other end (LOL).
+        """
+        return self._roads[loc_1, loc_2]
 
     def show(self) -> None:
-        self._tree.show()
+        self._root.show()
 
-    @staticmethod
-    def create_place(place: Place) -> Tree[Place]:
-        return Tree[Place](value=place)
+    def _find_route(self, loc_start: Location, loc_end: Location) -> list[Location]:
+        """
+        Finds a route between the two given locations in the map.
 
+        Args:
+            loc_start (Location): The source `Location` of the route.
+            loc_end (Location): The destination `Location` of the route.
 
-if __name__ == "__main__":
-    iiserb = Map.create_place(Place(name="IISER"))
-    bhopal = Map(root=iiserb)
-    # green_bay = Tree[Place](value=Place(name="Green Bay"))
-    # lal_ghati = Tree[Place](value=Place(name="Lalghati"))
-    # bairagarh = Tree[Place](value=Place(name="Bairagarh"))
-    # shivhare = Tree[Place](value=Place(name="Shivhare"))
+        Returns:
+            list[Location]: The `list` of `Location`s indicating the different
+                locations through which the route goes.
+        """
+        start = self._locations[loc_start]
+        end = self._locations[loc_end]
+        route: list[MapNode] = find_route(start=start, end=end)
+        return [place.value for place in route]
 
-    green_bay = Map.create_place(place=Place("Green Bay"))
-    lal_ghati = Map.create_place(place=Place("Lal Ghati"))
-    airport = Map.create_place(place=Place("Airport"))
-    dmart = Map.create_place(place=Place("Dmart"))
-    bairagarh = Map.create_place(place=Place("Bairagarh"))
-    shivhare = Map.create_place(place=Place("Shivhare"))
-    chirayu = Map.create_place(place=Place("Chirayu Hospital"))
-    upper_lake = Map.create_place(place=Place("Upper Lake"))
-    moti_masjid = Map.create_place(place=Place("Moti Masjid"))
-    rani_db = Map.create_place(place=Place("Rani Kamlapati / DB Mall"))
-    aiims= Map.create_place(place=Place("AIIMS Bhopal"))
-    aashima = Map.create_place(place=Place("Aashima Mall"))
-    bhopal_jn = Map.create_place(place=Place("Bhopal Junction"))
-    ppl_mall = Map.create_place(place=Place("People's Mall"))
-    #kohefiza = Map.create_place(place=Place("Kohefiza")) #Lal Ghati and Kohefiza are merged (distance<1km)
+    def get_fare_on_route(self, route: list[Location]) -> float:
+        """
+        Gets the fare born by travelling on a given `route`.
 
-    bhopal.add_road(place1=iiserb, place2=green_bay, fare=100)
-    bhopal.add_road(place1=iiserb, place2=shivhare, fare=100)
-    bhopal.add_road(place1=green_bay, place2=airport, fare=50)
-    bhopal.add_road(place1=airport, place2=dmart, fare=50)
-    bhopal.add_road(place1=dmart, place2=lal_ghati, fare=50)
-    bhopal.add_road(place1=shivhare, place2=chirayu, fare=50)
-    bhopal.add_road(place1=chirayu, place2=bairagarh, fare=50)
-    bhopal.add_road(place1=lal_ghati, place2=upper_lake, fare=50)
-    bhopal.add_road(place1=upper_lake, place2=moti_masjid, fare=50)
-    bhopal.add_road(place1=moti_masjid, place2=rani_db, fare=100)
-    bhopal.add_road(place1=rani_db, place2=aiims, fare=50)
-    bhopal.add_road(place1=aiims, place2=aashima, fare=50)
-    bhopal.add_road(place1=lal_ghati, place2=bhopal_jn, fare=150)
-    bhopal.add_road(place1=bhopal_jn, place2=ppl_mall, fare=100)
+        Args:
+            route (list[Location]): The route to calculate the travel
+                fare on.
 
-    iiserb.show()
+        Returns:
+            float: The fare to travel on the given route.
+        """
+        return sum(
+            [self._roads[loc_1, loc_2] for loc_1, loc_2 in zip(route[:-1], route[1:])]
+        )
 
-    my_route = find_route(start=iiserb, end=chirayu)
-    print([place.value.name for place in my_route])
-    cost = 0
-    for place, next_place in zip(my_route[:-1], my_route[1:]):
-        fare = bhopal.find_road(place1=place.value, place2=next_place.value).fare
-        print(place.value.name, next_place.value.name, fare)
-        cost += fare
-    print(f"Total fare = {cost}")
+    def make_trip(
+        self, loc_start: Location, loc_end: Location
+    ) -> tuple[list[Location], float]:
+        """
+        Plans a trip from `loc_start` to `loc_end` and returns the route
+        on the map tree and the fare born on that route.
+
+        Args:
+            loc_start (Location): The starting `Location` of the trip.
+            loc_end (Location): The ending `Location` of the trip.
+
+        Returns:
+            tuple[list[Location], float]: Tuple of -
+                - The route to be followed on the map.
+                - The fare on that route.
+        """
+        route = self._find_route(loc_start=loc_start, loc_end=loc_end)
+        fare = self.get_fare_on_route(route=route)
+        return route, fare
+
+    def get_passenger_route_fare(
+        self, passenger: Passenger
+    ) -> tuple[list[Location], float]:
+        """
+        Plans a trip for a given `Passenger`, and returns the route to travel
+        on the map and the fare.
+
+        Args:
+            passenger (Passenger): The passenger to plan the trip for.
+
+        Returns:
+            tuple[list[Location], float]: Tuple of -
+                - The route to be followed on the map.
+                - The fare on that route.
+        """
+        return self.make_trip(loc_start=passenger.source, loc_end=passenger.destination)
