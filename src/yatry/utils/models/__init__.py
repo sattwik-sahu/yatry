@@ -13,3 +13,16 @@ class Passenger:
     def get_dep_time_range_num(self) -> tuple[float, float]:
         t_start, t_end = self.dep_time_range
         return t_start.timestamp() / 1000, t_end.timestamp() / 1000
+
+
+def main():
+    p = Passenger(
+        name="Sattwik",
+        source=Location.IISERB,
+        destination=Location.GREEN_BAY,
+        dep_time_range=(datetime.now(), datetime.now()),
+    )
+
+
+if __name__ == "__main__":
+    main()
