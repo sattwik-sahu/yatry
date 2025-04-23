@@ -30,14 +30,15 @@ def create_random_passengers(
         while not (Location.IISERB in (origin, destination) and origin != destination):
             origin, destination = random.sample(list(Location), 2)
         random_seconds = random.randint(0, total_seconds)
-        duration = random.randint(900, min(5400, (total_seconds - random_seconds)))
+        duration = random.randint(0, min(1200, (total_seconds - random_seconds)))
         departure_time_start = start_time + timedelta(seconds=random_seconds)
         departure_time_end = departure_time_start + timedelta(seconds=duration)
 
         passenger = Passenger(
-            name=randomname.get_name(adj="character", noun="linear_algebra")
-            .replace("-", " ")
-            .upper(),
+            # name=randomname.get_name(adj="character", noun="linear_algebra")
+            # .replace("-", " ")
+            # .upper(),
+            name=f"Passenger #{i}",
             source=origin,
             destination=destination,
             dep_time_range=(departure_time_start, departure_time_end),

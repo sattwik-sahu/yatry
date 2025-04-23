@@ -69,13 +69,14 @@ class Tree[TValue](Node[TValue], Sized):
 
     def make_root(self, visited: list[Self] = []) -> None:
         # print(f"Making {self.value} as root")
-        if self not in visited:
-            visited.append(self)
-            # print(visited)
-        else:
-            return
+        # if self not in visited:
+        #     visited.append(self)
+        #     # print(visited)
+        # else:
+        #     return
         if self._parent is not None:
+            grandparent = self._parent.parent
             self._parent.remove_child(child=self)
-            if self._parent.parent is not None:
+            if grandparent is not None and grandparent is not self:
                 self._parent.make_root(visited=visited)
             self.add_child(child=self._parent)
