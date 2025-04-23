@@ -1,8 +1,10 @@
 from yatry.utils.models.tree import Tree
 from yatry.utils.models import Passenger
-from yatry.utils.optim.route import find_route
 from yatry.utils.data.locations import Location
+from yatry.utils.helpers.route import get_longest_prefix
 from yatry.utils.models.symm_dict import SymmetricKeyDict
+import numpy as np
+from numpy import typing as npt
 
 
 type RoadRegistry = SymmetricKeyDict[Location, float]
@@ -107,7 +109,13 @@ class Map:
         """
         start = self._locations[loc_start]
         end = self._locations[loc_end]
-        route: list[MapNode] = find_route(start=start, end=end)
+        route: list[MapNode] = []
+        end.make_root()
+        node = start
+        while node is not end:
+            route.append(node)  # type: ignore
+            node = node.parent  # type: ignore
+        route.append(end)
         return [place.value for place in route]
 
     def get_fare_on_route(self, route: list[Location]) -> float:
@@ -161,3 +169,74 @@ class Map:
                 - The fare on that route.
         """
         return self.make_trip(loc_start=passenger.source, loc_end=passenger.destination)
+
+    def _get_route_affinity(
+        self, route1: list[Location], route2: list[Location]
+    ) -> float:
+        """
+        Computes the route affinity between two passengers based on their individual routes.
+
+        The affinity is calculated as the ratio of fare on the common prefix of both routes
+        to the total fare of the first passenger's route.
+
+        Args:
+            passenger1 (Passenger): The first passenger.
+            passenger2 (Passenger): The second passenger.
+
+        Returns:
+            float: A value between 0 and 1 indicating how much of passenger1's route
+                overlaps with passenger2's route in terms of fare.
+        """
+        prefix = get_longest_prefix(route1=route1, route2=route2)
+        fare1 = self.get_fare_on_route(route=route1)
+        fare_prefix = self.get_fare_on_route(route=prefix)
+        return fare_prefix / fare1
+
+    def get_passenger_route_affinity(
+        self, passenger1: Passenger, passenger2: Passenger
+    ) -> float:
+        """
+        Computes a matrix of route affinities for a list of passengers.
+
+        Each entry (i, j) in the matrix represents the route affinity between
+        passenger i and passenger j, as calculated using the fare-overlap metric.
+
+        Args:
+            passengers (list[Passenger]): A list of `Passenger` objects.
+
+        Returns:
+            np.ndarray: A 2D array of shape (N, N), where N is the number of passengers,
+                containing the pairwise route affinities.
+        """
+        route1 = self._find_route(
+            loc_start=passenger1.source, loc_end=passenger1.destination
+        )
+        route2 = self._find_route(
+            loc_start=passenger2.source, loc_end=passenger2.destination
+        )
+        return self._get_route_affinity(route1=route1, route2=route2)
+
+    def get_passenger_route_affinity_matrix(
+        self, passengers: list[Passenger]
+    ) -> npt.NDArray[np.float64]:
+        """
+        Computes the route affinity between two routes.
+
+        The route affinity is defined as the fare of the longest shared prefix
+        between the two routes divided by the fare of the first route.
+
+        Args:
+            route1 (list[Location]): The first route.
+            route2 (list[Location]): The second route.
+
+        Returns:
+            float: A value in [0, 1] representing how much of `route1` is common
+                with `route2` in terms of fare.
+        """
+        affs = np.zeros((len(passengers), len(passengers)), dtype=np.float64)
+        for i, p_i in enumerate(passengers):
+            for j, p_j in enumerate(passengers):
+                affs[i, j] = self.get_passenger_route_affinity(
+                    passenger1=p_i, passenger2=p_j
+                )
+        return affs

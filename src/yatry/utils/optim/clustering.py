@@ -2,21 +2,21 @@ import numpy as np
 
 
 def affinity_propagation_ride_sharing(
-    convenience_matrix: np.ndarray,
+    affinity_matrix: np.ndarray,
     max_iterations: int = 200,
     damping_factor: float = 0.9,
     convergence_threshold: float = 1e-6,
 ) -> tuple[dict[int, list[int]], list[int]]:
     """
-    Implements Affinity Propagation algorithm for ride-sharing scenarios.
+    Implements Affinity Propagation algorithm for ride-sharing passenger grouping.
 
-    This function takes a convenience matrix where entry (i,j) represents how
-    convenient it is for passenger i to share a ride with passenger j, and
-    returns a clustering of passengers with designated drivers.
+    This function takes an affinity matrix where entry (i,j) represents how
+    much passenger i would like to be grouped with passenger j, and
+    returns clusters of passengers with designated cluster representatives.
 
     Args:
-        convenience_matrix: An `n x n` numpy array where entry (i,j) is the
-            convenience score for passenger i to share a ride with passenger j.
+        affinity_matrix: An `n x n` numpy array where entry (i,j) is the
+            affinity score for passenger i towards passenger j.
         max_iterations: The maximum number of iterations to run the algorithm.
         damping_factor: Factor between 0.5 and 1.0 that dampens updates to
             avoid numerical oscillations.
@@ -25,21 +25,21 @@ def affinity_propagation_ride_sharing(
 
     Returns:
         A tuple containing:
-            - A dictionary mapping driver IDs to lists of passenger IDs
-            - A list of identified driver IDs (exemplars)
+            - A dictionary mapping cluster representative IDs to lists of member passenger IDs
+            - A list of identified cluster representative IDs (exemplars)
     """
     # Get the number of passengers
-    n_passengers = convenience_matrix.shape[0]
+    n_passengers = affinity_matrix.shape[0]
 
     # Initialize the responsibility and availability matrices with zeros
-    # Responsibility R(i,k): How good would passenger k be as a driver for passenger i
+    # Responsibility R(i,k): How suitable would passenger k be as a representative for passenger i
     R = np.zeros((n_passengers, n_passengers))
 
-    # Availability A(i,k): How willing is passenger k to be a driver for passenger i
+    # Availability A(i,k): How appropriate is it for passenger i to select passenger k as their representative
     A = np.zeros((n_passengers, n_passengers))
 
-    # Use the convenience matrix as our similarity matrix
-    S = convenience_matrix.copy()
+    # Use the affinity matrix as our similarity matrix
+    S = affinity_matrix.copy()
 
     # Main loop - iteratively update responsibilities and availabilities
     for iteration in range(max_iterations):
@@ -49,7 +49,7 @@ def affinity_propagation_ride_sharing(
 
         # Step 1: Update responsibilities
         # R(i,k) = S(i,k) - max_{k' != k} {A(i,k') + S(i,k')}
-        # This means: "How good is k as a driver for i compared to all other potential drivers?"
+        # This means: "How suitable is k as a representative for i compared to all other potential representatives?"
         for i in range(n_passengers):
             for k in range(n_passengers):
                 # Find the maximum value excluding k
@@ -67,8 +67,8 @@ def affinity_propagation_ride_sharing(
         # Step 2: Update availabilities
         # For i != k: A(i,k) = min(0, R(k,k) + sum_{i' != i,k} max(0, R(i',k)))
         # For i == k: A(k,k) = sum_{i' != k} max(0, R(i',k))
-        # This means: "Given how other passengers view k as a driver,
-        # how appropriate is it for i to choose k as their driver?"
+        # This means: "Given how other passengers view k as a representative,
+        # how appropriate is it for i to choose k as their group representative?"
         for i in range(n_passengers):
             for k in range(n_passengers):
                 if i != k:
@@ -103,39 +103,42 @@ def affinity_propagation_ride_sharing(
             print(f"Converged after {iteration + 1} iterations")
             break
 
-    # Step 3: Identify exemplars (drivers)
-    # A point becomes an exemplar if (A(i,i) + R(i,i)) > 0
-    # This means the point "agrees" to be an exemplar based on gathered evidence
+    # Step 3: Identify exemplars (cluster representatives)
+    # A passenger becomes a representative if (A(i,i) + R(i,i)) > 0
+    # This means the passenger "agrees" to be a representative based on gathered evidence
     decision_matrix = A + R
-    driver_indices = np.where(np.diag(decision_matrix) > 0)[0].tolist()
+    # Convert NumPy array to explicit Python list of integers
+    representative_indices = [
+        int(idx) for idx in np.where(np.diag(decision_matrix) > 0)[0]
+    ]
 
-    # If no drivers found (can happen in edge cases), choose the point with max self-decision value
-    if not driver_indices:
+    # If no representatives found (can happen in edge cases), choose the passenger with max self-decision value
+    if not representative_indices:
         print(
-            "No drivers identified naturally, selecting based on highest decision value"
+            "No cluster representatives identified naturally, selecting based on highest decision value"
         )
-        driver_indices = [np.argmax(np.diag(decision_matrix))]
+        representative_indices = [int(np.argmax(np.diag(decision_matrix)))]
 
-    # Step 4: Assign passengers to drivers (forming carpools)
-    carpools = {driver: [] for driver in driver_indices}  # type: ignore
+    # Step 4: Assign passengers to their representatives (forming groups)
+    passenger_groups: dict[int, list[int]] = {rep: [] for rep in representative_indices}
 
     for passenger in range(n_passengers):
-        # A passenger joins the carpool of the driver that maximizes A(passenger,driver) + R(passenger,driver)
-        if passenger in driver_indices:  # type: ignore
-            # Drivers are already assigned to their own carpool
-            carpools[passenger].append(passenger)
+        # A passenger joins the group of the representative that maximizes A(passenger,rep) + R(passenger,rep)
+        if passenger in representative_indices:
+            # Representatives are already assigned to their own group
+            passenger_groups[passenger].append(passenger)
         else:
-            # Find the best driver for this passenger
-            best_driver_idx = -1
+            # Find the best representative for this passenger
+            best_rep_idx = -1
             best_score = -np.inf
 
-            for driver in driver_indices:  # type: ignore
-                score = decision_matrix[passenger, driver]
+            for rep in representative_indices:
+                score = decision_matrix[passenger, rep]
                 if score > best_score:
                     best_score = score
-                    best_driver_idx = driver
+                    best_rep_idx = rep
 
-            # Assign passenger to the best driver's carpool
-            carpools[best_driver_idx].append(passenger)
+            # Assign passenger to the best representative's group
+            passenger_groups[best_rep_idx].append(passenger)
 
-    return carpools, driver_indices
+    return passenger_groups, representative_indices

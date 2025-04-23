@@ -124,9 +124,9 @@ class VehicleAssignmentModel:
         self.model.solve(**kwargs)
         # Extract assignments
         self.assignments = {
-            v: [t for t in self.T if pulp.value(self.x[(t, v)]) > 0.5]
+            v: [t for t in self.T if pulp.value(self.x[(t, v)]) > 0.5]  # type: ignore
             for v in self.V
-            if any(pulp.value(self.x[(t, v)]) > 0.5 for t in self.T)
+            if any(pulp.value(self.x[(t, v)]) > 0.5 for t in self.T)  # type: ignore
         }
         self.Z_val = pulp.value(self.Z)
         return pulp.LpStatus[self.model.status]
@@ -151,7 +151,7 @@ class VehicleAssignmentModel:
                         "occ": {
                             s: pulp.value(self.occ[(v, s)])
                             for s in self.segments
-                            if pulp.value(self.y[(v, s)]) > 0.5
+                            if pulp.value(self.y[(v, s)]) > 0.5  # type: ignore
                         },
                     }
                 )
