@@ -3,6 +3,8 @@ from scipy.stats import norm
 from yatry.utils.helpers.time import calc_time_conv_params
 from scipy.optimize import golden
 
+from yatry.utils.models import Passenger
+
 
 def optimize_dep_time(
     t_mins: list[float], t_maxs: list[float], m_range: float = 0.8
@@ -42,3 +44,10 @@ def optimize_dep_time(
         return float(-np.sum([norm.logpdf(x, mu, std) for mu, std in zip(mus, stds)]))
 
     return float(golden(func=_time_objective_func, brack=(brack_start, brack_end)))  # type: ignore
+
+
+def optimize_passengers_dep_time(passengers: list[Passenger]) -> float:
+    return optimize_dep_time(
+        t_mins=[passenger.dep_time_range[0].timestamp() for passenger in passengers],
+        t_maxs=[passenger.dep_time_range[1].timestamp() for passenger in passengers],
+    )

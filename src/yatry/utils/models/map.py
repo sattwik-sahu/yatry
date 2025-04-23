@@ -116,6 +116,9 @@ class Map:
             route.append(node)  # type: ignore
             node = node.parent  # type: ignore
         route.append(end)
+
+        self._root.make_root()
+
         return [place.value for place in route]
 
     def get_fare_on_route(self, route: list[Location]) -> float:

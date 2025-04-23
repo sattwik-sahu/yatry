@@ -27,9 +27,7 @@ def create_random_passengers(
 
     for i in range(n_passengers):
         origin, destination = Location.AASHIMA, Location.AASHIMA
-        while not (
-            Location.IISERB in (origin, destination) and origin is not destination
-        ):
+        while not (Location.IISERB in (origin, destination) and origin != destination):
             origin, destination = random.sample(list(Location), 2)
         random_seconds = random.randint(0, total_seconds)
         duration = random.randint(900, min(5400, (total_seconds - random_seconds)))
