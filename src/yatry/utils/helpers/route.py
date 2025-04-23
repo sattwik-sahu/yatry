@@ -47,9 +47,9 @@ def get_passenger_route_affinity_matrix(
     map: Map, passengers: list[Passenger]
 ) -> npt.NDArray[np.float64]:
     affs = np.zeros((len(passengers), len(passengers)), dtype=np.float64)
-    for i, p1 in enumerate(passengers):
-        for j, p2 in enumerate(passengers):
+    for i, p_i in enumerate(passengers):
+        for j, p_j in enumerate(passengers):
             affs[i, j] = get_passenger_route_affinity(
-                map=map, passenger1=p1, passenger2=p2
+                map=map, passenger1=p_i, passenger2=p_j
             )
     return affs

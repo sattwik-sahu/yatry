@@ -13,9 +13,3 @@ class Passenger:
     def get_dep_time_range_num(self) -> tuple[float, float]:
         t_start, t_end = self.dep_time_range
         return t_start.timestamp(), t_end.timestamp()
-
-
-@dataclass
-class Road:
-    ends: set[Location]
-    fare: float
