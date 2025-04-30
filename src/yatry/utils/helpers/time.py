@@ -95,8 +95,8 @@ def time_affinity_score(
     return min(
         1,
         (
-            float(stats.norm.cdf(t2_min, u1, std1))
-            - float(stats.norm.cdf(t2_max, u1, std1))
+            float(stats.norm.cdf(t2_max, u1, std1))
+            - float(stats.norm.cdf(t2_min, u1, std1))
         )
         / m_range,
     )

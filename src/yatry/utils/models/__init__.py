@@ -15,7 +15,14 @@ class Passenger:
         return t_start.timestamp(), t_end.timestamp()
 
 
-@dataclass
-class Road:
-    ends: set[Location]
-    fare: float
+def main():
+    p = Passenger(
+        name="Sattwik",
+        source=Location.IISERB,
+        destination=Location.GREEN_BAY,
+        dep_time_range=(datetime.now(), datetime.now()),
+    )
+
+
+if __name__ == "__main__":
+    main()

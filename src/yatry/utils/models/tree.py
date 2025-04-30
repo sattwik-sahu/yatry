@@ -30,8 +30,21 @@ class Tree[TValue](Node[TValue], Sized):
         return self._children
 
     def add_child(self, child: Self) -> None:
-        self._children.append(child)
-        child.parent = self
+        if child not in self._children:
+            self._children.append(child)
+            if child._parent is not self:
+                child._parent = self  # avoid triggering parent setter again
+
+    # @property
+    # def parent(self) -> Self | None:
+    #     return self._parent
+
+    # @parent.setter
+    # def parent(self, parent: Self) -> None:
+    #     if self._parent is not parent:
+    #         self._parent = parent
+    #         if self not in parent._children:
+    #             parent._children.append(self)
 
     def __repr__(self) -> str:
         if not self._children:
@@ -54,9 +67,16 @@ class Tree[TValue](Node[TValue], Sized):
         if child in self._children:
             self._children.remove(child)
 
-    def make_root(self) -> None:
+    def make_root(self, visited: list[Self] = []) -> None:
+        # print(f"Making {self.value} as root")
+        # if self not in visited:
+        #     visited.append(self)
+        #     # print(visited)
+        # else:
+        #     return
         if self._parent is not None:
+            grandparent = self._parent.parent
             self._parent.remove_child(child=self)
-            if self._parent.parent is not None:
-                self._parent.make_root()
+            if grandparent is not None and grandparent is not self:
+                self._parent.make_root(visited=visited)
             self.add_child(child=self._parent)

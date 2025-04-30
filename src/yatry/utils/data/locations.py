@@ -1,5 +1,4 @@
 from enum import Enum
-from yatry.utils.models.tree import Tree
 
 
 class Location(Enum):
@@ -18,12 +17,3 @@ class Location(Enum):
     AASHIMA = "Aashima Mall"
     BHOPAL_JN = "Bhopal Junction"
     PPL_MALL = "People's Mall"
-
-
-LOC: dict[Location, Tree[Location]] = {
-    loc: Tree[Location](value=loc) for loc in Location
-}
-
-
-def find_location(name: str) -> Location:
-    return [loc for loc in Location if loc.name == name][0]

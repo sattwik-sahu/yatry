@@ -1,0 +1,404 @@
+======= Auto #1 =======
+Optimized Departure Time: 23:40 23 Apr 2025
+Total Passengers: 3; Total fare : 150
+Passenger #1 | From: Airport → To: IISER Bhopal | New Fare: ₹56.25 | Saved : ₹93.75
+Passenger #189 | From: Shivhare → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹62.50
+Passenger #195 | From: Airport → To: IISER Bhopal | New Fare: ₹56.25 | Saved : ₹93.75
+Total Saving: ₹250.0
+
+======= Auto #2 =======
+Optimized Departure Time: 00:15 24 Apr 2025
+Total Passengers: 5; Total fare : 250
+Passenger #2 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹200.00
+Passenger #94 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹200.00
+Passenger #97 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹200.00
+Passenger #100 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹200.00
+Passenger #140 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹200.00
+Total Saving: ₹1000.0
+
+======= Auto #3 =======
+Optimized Departure Time: 00:29 24 Apr 2025
+Total Passengers: 12; Total fare : 200
+Passenger #5 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #9 | From: IISER Bhopal → To: Shivhare | New Fare: ₹9.76 | Saved : ₹90.24
+Passenger #36 | From: IISER Bhopal → To: Shivhare | New Fare: ₹9.76 | Saved : ₹90.24
+Passenger #45 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #98 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #106 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #108 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹14.63 | Saved : ₹135.37
+Passenger #114 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #129 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Passenger #165 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹14.63 | Saved : ₹135.37
+Passenger #177 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹14.63 | Saved : ₹135.37
+Passenger #191 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹19.51 | Saved : ₹180.49
+Total Saving: ₹1850.0000000000005
+
+======= Auto #4 =======
+Optimized Departure Time: 23:50 23 Apr 2025
+Total Passengers: 3; Total fare : 500
+Passenger #18 | From: People's Mall → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Passenger #124 | From: People's Mall → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Passenger #174 | From: People's Mall → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Total Saving: ₹1000.0000000000001
+
+======= Auto #5 =======
+Optimized Departure Time: 00:15 24 Apr 2025
+Total Passengers: 4; Total fare : 550
+Passenger #24 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹137.50 | Saved : ₹412.50
+Passenger #74 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹137.50 | Saved : ₹412.50
+Passenger #131 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹137.50 | Saved : ₹412.50
+Passenger #151 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹137.50 | Saved : ₹412.50
+Total Saving: ₹1650.0
+
+======= Auto #6 =======
+Optimized Departure Time: 23:45 23 Apr 2025
+Total Passengers: 15; Total fare : 550
+Passenger #10 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹32.67 | Saved : ₹267.33
+Passenger #15 | From: IISER Bhopal → To: Green Bay | New Fare: ₹10.89 | Saved : ₹89.11
+Passenger #25 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹54.46 | Saved : ₹445.54
+Passenger #33 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹54.46 | Saved : ₹445.54
+Passenger #57 | From: IISER Bhopal → To: DMart | New Fare: ₹21.78 | Saved : ₹178.22
+Passenger #83 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹54.46 | Saved : ₹445.54
+Passenger #86 | From: IISER Bhopal → To: Aashima Mall | New Fare: ₹59.90 | Saved : ₹490.10
+Passenger #91 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹49.01 | Saved : ₹400.99
+Passenger #111 | From: IISER Bhopal → To: Moti Masjid | New Fare: ₹38.12 | Saved : ₹311.88
+Passenger #125 | From: IISER Bhopal → To: DMart | New Fare: ₹21.78 | Saved : ₹178.22
+Passenger #142 | From: IISER Bhopal → To: DMart | New Fare: ₹21.78 | Saved : ₹178.22
+Passenger #145 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹27.23 | Saved : ₹222.77
+Passenger #176 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹54.46 | Saved : ₹445.54
+Passenger #190 | From: IISER Bhopal → To: Green Bay | New Fare: ₹10.89 | Saved : ₹89.11
+Passenger #199 | From: IISER Bhopal → To: Moti Masjid | New Fare: ₹38.12 | Saved : ₹311.88
+Total Saving: ₹4500.000000000001
+
+======= Auto #7 =======
+Optimized Departure Time: 23:52 23 Apr 2025
+Total Passengers: 7; Total fare : 150
+Passenger #13 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #27 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #34 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #40 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #64 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #159 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Passenger #173 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹21.43 | Saved : ₹128.57
+Total Saving: ₹900.0
+
+======= Auto #8 =======
+Optimized Departure Time: 23:45 23 Apr 2025
+Total Passengers: 2; Total fare : 500
+Passenger #32 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹250.00 | Saved : ₹250.00
+Passenger #135 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹250.00 | Saved : ₹250.00
+Total Saving: ₹500.0
+
+======= Auto #9 =======
+Optimized Departure Time: 00:27 24 Apr 2025
+Total Passengers: 3; Total fare : 500
+Passenger #20 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Passenger #37 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Passenger #99 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹166.67 | Saved : ₹333.33
+Total Saving: ₹1000.0000000000001
+
+======= Auto #10 =======
+Optimized Departure Time: 00:21 24 Apr 2025
+Total Passengers: 3; Total fare : 450
+Passenger #43 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹150.00 | Saved : ₹300.00
+Passenger #59 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹150.00 | Saved : ₹300.00
+Passenger #67 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹150.00 | Saved : ₹300.00
+Total Saving: ₹900.0
+
+======= Auto #11 =======
+Optimized Departure Time: 00:02 24 Apr 2025
+Total Passengers: 3; Total fare : 350
+Passenger #48 | From: Moti Masjid → To: IISER Bhopal | New Fare: ₹116.67 | Saved : ₹233.33
+Passenger #119 | From: Moti Masjid → To: IISER Bhopal | New Fare: ₹116.67 | Saved : ₹233.33
+Passenger #155 | From: Moti Masjid → To: IISER Bhopal | New Fare: ₹116.67 | Saved : ₹233.33
+Total Saving: ₹700.0
+
+======= Auto #12 =======
+Optimized Departure Time: 00:11 24 Apr 2025
+Total Passengers: 13; Total fare : 500
+Passenger #22 | From: IISER Bhopal → To: Green Bay | New Fare: ₹15.62 | Saved : ₹84.38
+Passenger #39 | From: IISER Bhopal → To: DMart | New Fare: ₹31.25 | Saved : ₹168.75
+Passenger #52 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹46.88 | Saved : ₹253.12
+Passenger #70 | From: IISER Bhopal → To: Green Bay | New Fare: ₹15.62 | Saved : ₹84.38
+Passenger #95 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.06 | Saved : ₹210.94
+Passenger #103 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.06 | Saved : ₹210.94
+Passenger #109 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.06 | Saved : ₹210.94
+Passenger #116 | From: IISER Bhopal → To: Bhopal Junction | New Fare: ₹62.50 | Saved : ₹337.50
+Passenger #117 | From: IISER Bhopal → To: People's Mall | New Fare: ₹78.12 | Saved : ₹421.88
+Passenger #126 | From: IISER Bhopal → To: DMart | New Fare: ₹31.25 | Saved : ₹168.75
+Passenger #172 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.06 | Saved : ₹210.94
+Passenger #178 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.06 | Saved : ₹210.94
+Passenger #186 | From: IISER Bhopal → To: Airport | New Fare: ₹23.44 | Saved : ₹126.56
+Total Saving: ₹2700.0
+
+======= Auto #13 =======
+Optimized Departure Time: 00:32 24 Apr 2025
+Total Passengers: 13; Total fare : 550
+Passenger #21 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹28.95 | Saved : ₹221.05
+Passenger #26 | From: IISER Bhopal → To: Moti Masjid | New Fare: ₹40.53 | Saved : ₹309.47
+Passenger #50 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹34.74 | Saved : ₹265.26
+Passenger #61 | From: IISER Bhopal → To: Aashima Mall | New Fare: ₹63.68 | Saved : ₹486.32
+Passenger #69 | From: IISER Bhopal → To: Aashima Mall | New Fare: ₹63.68 | Saved : ₹486.32
+Passenger #75 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹57.89 | Saved : ₹442.11
+Passenger #77 | From: IISER Bhopal → To: DMart | New Fare: ₹23.16 | Saved : ₹176.84
+Passenger #93 | From: IISER Bhopal → To: Moti Masjid | New Fare: ₹40.53 | Saved : ₹309.47
+Passenger #113 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹57.89 | Saved : ₹442.11
+Passenger #130 | From: IISER Bhopal → To: Moti Masjid | New Fare: ₹40.53 | Saved : ₹309.47
+Passenger #160 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹52.11 | Saved : ₹397.89
+Passenger #168 | From: IISER Bhopal → To: Green Bay | New Fare: ₹11.58 | Saved : ₹88.42
+Passenger #183 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹34.74 | Saved : ₹265.26
+Total Saving: ₹4199.999999999999
+
+======= Auto #14 =======
+Optimized Departure Time: 23:58 23 Apr 2025
+Total Passengers: 8; Total fare : 550
+Passenger #6 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹58.93 | Saved : ₹241.07
+Passenger #16 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹58.93 | Saved : ₹241.07
+Passenger #31 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹49.11 | Saved : ₹200.89
+Passenger #63 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹88.39 | Saved : ₹361.61
+Passenger #78 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹58.93 | Saved : ₹241.07
+Passenger #112 | From: IISER Bhopal → To: Aashima Mall | New Fare: ₹108.04 | Saved : ₹441.96
+Passenger #139 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹88.39 | Saved : ₹361.61
+Passenger #187 | From: IISER Bhopal → To: DMart | New Fare: ₹39.29 | Saved : ₹160.71
+Total Saving: ₹2250.0000000000005
+
+======= Auto #15 =======
+Optimized Departure Time: 00:30 24 Apr 2025
+Total Passengers: 5; Total fare : 500
+Passenger #12 | From: IISER Bhopal → To: Bhopal Junction | New Fare: ₹111.11 | Saved : ₹288.89
+Passenger #49 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹125.00 | Saved : ₹325.00
+Passenger #54 | From: IISER Bhopal → To: DMart | New Fare: ₹55.56 | Saved : ₹144.44
+Passenger #65 | From: IISER Bhopal → To: People's Mall | New Fare: ₹138.89 | Saved : ₹361.11
+Passenger #71 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹69.44 | Saved : ₹180.56
+Total Saving: ₹1300.0
+
+======= Auto #16 =======
+Optimized Departure Time: 00:34 24 Apr 2025
+Total Passengers: 3; Total fare : 100
+Passenger #30 | From: Green Bay → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Passenger #79 | From: Green Bay → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Passenger #80 | From: Green Bay → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Total Saving: ₹199.99999999999997
+
+======= Auto #17 =======
+Optimized Departure Time: 00:31 24 Apr 2025
+Total Passengers: 6; Total fare : 500
+Passenger #28 | From: People's Mall → To: IISER Bhopal | New Fare: ₹84.75 | Saved : ₹415.25
+Passenger #47 | From: People's Mall → To: IISER Bhopal | New Fare: ₹84.75 | Saved : ₹415.25
+Passenger #82 | From: People's Mall → To: IISER Bhopal | New Fare: ₹84.75 | Saved : ₹415.25
+Passenger #85 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹76.27 | Saved : ₹373.73
+Passenger #102 | From: People's Mall → To: IISER Bhopal | New Fare: ₹84.75 | Saved : ₹415.25
+Passenger #137 | From: People's Mall → To: IISER Bhopal | New Fare: ₹84.75 | Saved : ₹415.25
+Total Saving: ₹2450.0
+
+======= Auto #18 =======
+Optimized Departure Time: 00:06 24 Apr 2025
+Total Passengers: 4; Total fare : 100
+Passenger #84 | From: Shivhare → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #149 | From: Shivhare → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #158 | From: Shivhare → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #188 | From: Shivhare → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Total Saving: ₹300.0
+
+======= Auto #19 =======
+Optimized Departure Time: 00:15 24 Apr 2025
+Total Passengers: 4; Total fare : 200
+Passenger #29 | From: DMart → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹150.00
+Passenger #62 | From: DMart → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹150.00
+Passenger #89 | From: DMart → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹150.00
+Passenger #175 | From: DMart → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹150.00
+Total Saving: ₹600.0
+
+======= Auto #20 =======
+Optimized Departure Time: 00:32 24 Apr 2025
+Total Passengers: 2; Total fare : 450
+Passenger #3 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹225.00 | Saved : ₹225.00
+Passenger #90 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹225.00 | Saved : ₹225.00
+Total Saving: ₹450.0
+
+======= Auto #21 =======
+Optimized Departure Time: 00:01 24 Apr 2025
+Total Passengers: 5; Total fare : 200
+Passenger #73 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #87 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹50.00 | Saved : ₹150.00
+Passenger #101 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #161 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #167 | From: Chirayu Hospital → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Total Saving: ₹600.0
+
+======= Auto #22 =======
+Optimized Departure Time: 00:35 24 Apr 2025
+Total Passengers: 2; Total fare : 450
+Passenger #23 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹225.00 | Saved : ₹225.00
+Passenger #105 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹225.00 | Saved : ₹225.00
+Total Saving: ₹450.0
+
+======= Auto #23 =======
+Optimized Departure Time: 00:36 24 Apr 2025
+Total Passengers: 3; Total fare : 400
+Passenger #81 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹160.00 | Saved : ₹240.00
+Passenger #107 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹160.00 | Saved : ₹240.00
+Passenger #128 | From: DMart → To: IISER Bhopal | New Fare: ₹80.00 | Saved : ₹120.00
+Total Saving: ₹600.0
+
+======= Auto #24 =======
+Optimized Departure Time: 23:55 23 Apr 2025
+Total Passengers: 6; Total fare : 300
+Passenger #14 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Passenger #115 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Passenger #123 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Passenger #143 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Passenger #156 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Passenger #170 | From: Upper Lake → To: IISER Bhopal | New Fare: ₹50.00 | Saved : ₹250.00
+Total Saving: ₹1500.0
+
+======= Auto #25 =======
+Optimized Departure Time: 00:28 24 Apr 2025
+Total Passengers: 3; Total fare : 100
+Passenger #38 | From: Shivhare → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Passenger #68 | From: Shivhare → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Passenger #121 | From: Shivhare → To: IISER Bhopal | New Fare: ₹33.33 | Saved : ₹66.67
+Total Saving: ₹199.99999999999997
+
+======= Auto #26 =======
+Optimized Departure Time: 00:26 24 Apr 2025
+Total Passengers: 2; Total fare : 200
+Passenger #96 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹100.00 | Saved : ₹100.00
+Passenger #127 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹100.00 | Saved : ₹100.00
+Total Saving: ₹200.0
+
+======= Auto #27 =======
+Optimized Departure Time: 00:02 24 Apr 2025
+Total Passengers: 4; Total fare : 500
+Passenger #41 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹375.00
+Passenger #122 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹375.00
+Passenger #132 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹375.00
+Passenger #134 | From: AIIMS Bhopal → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹375.00
+Total Saving: ₹1500.0
+
+======= Auto #28 =======
+Optimized Departure Time: 23:50 23 Apr 2025
+Total Passengers: 7; Total fare : 500
+Passenger #4 | From: IISER Bhopal → To: People's Mall | New Fare: ₹102.04 | Saved : ₹397.96
+Passenger #55 | From: IISER Bhopal → To: Green Bay | New Fare: ₹20.41 | Saved : ₹79.59
+Passenger #110 | From: IISER Bhopal → To: Bhopal Junction | New Fare: ₹81.63 | Saved : ₹318.37
+Passenger #133 | From: IISER Bhopal → To: People's Mall | New Fare: ₹102.04 | Saved : ₹397.96
+Passenger #146 | From: IISER Bhopal → To: People's Mall | New Fare: ₹102.04 | Saved : ₹397.96
+Passenger #185 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹51.02 | Saved : ₹198.98
+Passenger #196 | From: IISER Bhopal → To: DMart | New Fare: ₹40.82 | Saved : ₹159.18
+Total Saving: ₹1950.0
+
+======= Auto #29 =======
+Optimized Departure Time: 00:06 24 Apr 2025
+Total Passengers: 3; Total fare : 200
+Passenger #120 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Passenger #141 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Passenger #147 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Total Saving: ₹399.99999999999994
+
+======= Auto #30 =======
+Optimized Departure Time: 00:01 24 Apr 2025
+Total Passengers: 2; Total fare : 350
+Passenger #88 | From: Moti Masjid → To: IISER Bhopal | New Fare: ₹175.00 | Saved : ₹175.00
+Passenger #144 | From: Moti Masjid → To: IISER Bhopal | New Fare: ₹175.00 | Saved : ₹175.00
+Total Saving: ₹350.0
+
+======= Auto #31 =======
+Optimized Departure Time: 00:11 24 Apr 2025
+Total Passengers: 3; Total fare : 400
+Passenger #60 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹133.33 | Saved : ₹266.67
+Passenger #148 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹133.33 | Saved : ₹266.67
+Passenger #184 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹133.33 | Saved : ₹266.67
+Total Saving: ₹799.9999999999999
+
+======= Auto #32 =======
+Optimized Departure Time: 00:29 24 Apr 2025
+Total Passengers: 6; Total fare : 550
+Passenger #7 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Passenger #8 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Passenger #17 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Passenger #104 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Passenger #150 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Passenger #193 | From: Aashima Mall → To: IISER Bhopal | New Fare: ₹91.67 | Saved : ₹458.33
+Total Saving: ₹2750.0
+
+======= Auto #33 =======
+Optimized Departure Time: 00:25 24 Apr 2025
+Total Passengers: 2; Total fare : 400
+Passenger #92 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹200.00 | Saved : ₹200.00
+Passenger #152 | From: Bhopal Junction → To: IISER Bhopal | New Fare: ₹200.00 | Saved : ₹200.00
+Total Saving: ₹400.0
+
+======= Auto #34 =======
+Optimized Departure Time: 23:44 23 Apr 2025
+Total Passengers: 2; Total fare : 250
+Passenger #66 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹125.00
+Passenger #153 | From: Lal Ghati → To: IISER Bhopal | New Fare: ₹125.00 | Saved : ₹125.00
+Total Saving: ₹250.0
+
+======= Auto #35 =======
+Optimized Departure Time: 23:54 23 Apr 2025
+Total Passengers: 4; Total fare : 100
+Passenger #19 | From: Green Bay → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #138 | From: Green Bay → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #154 | From: Green Bay → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Passenger #182 | From: Green Bay → To: IISER Bhopal | New Fare: ₹25.00 | Saved : ₹75.00
+Total Saving: ₹300.0
+
+======= Auto #36 =======
+Optimized Departure Time: 00:13 24 Apr 2025
+Total Passengers: 6; Total fare : 200
+Passenger #11 | From: IISER Bhopal → To: Shivhare | New Fare: ₹20.00 | Saved : ₹80.00
+Passenger #51 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹40.00 | Saved : ₹160.00
+Passenger #72 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹30.00 | Saved : ₹120.00
+Passenger #157 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹40.00 | Saved : ₹160.00
+Passenger #163 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹40.00 | Saved : ₹160.00
+Passenger #181 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹30.00 | Saved : ₹120.00
+Total Saving: ₹800.0
+
+======= Auto #37 =======
+Optimized Departure Time: 00:36 24 Apr 2025
+Total Passengers: 2; Total fare : 450
+Passenger #46 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹225.00 | Saved : ₹225.00
+Passenger #164 | From: Rani Kamlapati / DB Mall → To: IISER Bhopal | New Fare: ₹225.00 | Saved : ₹225.00
+Total Saving: ₹450.0
+
+======= Auto #38 =======
+Optimized Departure Time: 23:59 23 Apr 2025
+Total Passengers: 4; Total fare : 200
+Passenger #53 | From: IISER Bhopal → To: Chirayu Hospital | New Fare: ₹46.15 | Saved : ₹103.85
+Passenger #118 | From: IISER Bhopal → To: Shivhare | New Fare: ₹30.77 | Saved : ₹69.23
+Passenger #166 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹61.54 | Saved : ₹138.46
+Passenger #179 | From: IISER Bhopal → To: Bairagarh | New Fare: ₹61.54 | Saved : ₹138.46
+Total Saving: ₹450.0
+
+======= Auto #39 =======
+Optimized Departure Time: 23:42 23 Apr 2025
+Total Passengers: 3; Total fare : 200
+Passenger #76 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Passenger #136 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Passenger #194 | From: Bairagarh → To: IISER Bhopal | New Fare: ₹66.67 | Saved : ₹133.33
+Total Saving: ₹399.99999999999994
+
+======= Auto #40 =======
+Optimized Departure Time: 00:21 24 Apr 2025
+Total Passengers: 9; Total fare : 550
+Passenger #0 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹78.57 | Saved : ₹421.43
+Passenger #35 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.29 | Saved : ₹210.71
+Passenger #42 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.29 | Saved : ₹210.71
+Passenger #44 | From: IISER Bhopal → To: Aashima Mall | New Fare: ₹86.43 | Saved : ₹463.57
+Passenger #58 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹70.71 | Saved : ₹379.29
+Passenger #162 | From: IISER Bhopal → To: Upper Lake | New Fare: ₹47.14 | Saved : ₹252.86
+Passenger #171 | From: IISER Bhopal → To: Lal Ghati | New Fare: ₹39.29 | Saved : ₹210.71
+Passenger #192 | From: IISER Bhopal → To: Rani Kamlapati / DB Mall | New Fare: ₹70.71 | Saved : ₹379.29
+Passenger #197 | From: IISER Bhopal → To: AIIMS Bhopal | New Fare: ₹78.57 | Saved : ₹421.43
+Total Saving: ₹2950.0
+
+======= Auto #41 =======
+Optimized Departure Time: 23:56 23 Apr 2025
+Total Passengers: 4; Total fare : 150
+Passenger #56 | From: Airport → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #169 | From: Airport → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #180 | From: Airport → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Passenger #198 | From: Airport → To: IISER Bhopal | New Fare: ₹37.50 | Saved : ₹112.50
+Total Saving: ₹450.0

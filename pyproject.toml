@@ -12,10 +12,14 @@ dependencies = [
     "networkx>=3.4.2",
     "numpy>=2.2.4",
     "pandas>=2.2.3",
+    "pulp>=3.1.1",
     "python-louvain>=0.16",
+    "randomname>=0.2.1",
+    "rich>=14.0.0",
     "scikit-learn>=1.6.1",
     "scipy>=1.15.2",
     "seaborn>=0.13.2",
+    "typer>=0.15.2",
     "uuid>=1.30",
 ]
 
