@@ -1,6 +1,6 @@
 import numpy as np
 from yatry.utils.data.locations import Location
-from yatry.utils.helpers.route import get_longest_prefix
+from yatry.utils.helpers.route import get_valid_shared_route
 from yatry.utils.models import Passenger
 from yatry.utils.models.map import Map
 from yatry.utils.data.map import BHOPAL

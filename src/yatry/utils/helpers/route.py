@@ -1,7 +1,7 @@
 from yatry.utils.data.locations import Location
 
 
-def get_longest_prefix(
+def get_valid_shared_route(
     route1: list[Location], route2: list[Location]
 ) -> list[Location]:
     prefix = []

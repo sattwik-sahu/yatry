@@ -1,7 +1,7 @@
 from yatry.utils.models.tree import Tree
 from yatry.utils.models import Passenger
 from yatry.utils.data.locations import Location
-from yatry.utils.helpers.route import get_longest_prefix
+from yatry.utils.helpers.route import get_valid_shared_route
 from yatry.utils.models.symm_dict import SymmetricKeyDict
 import numpy as np
 from numpy import typing as npt
@@ -190,7 +190,7 @@ class Map:
             float: A value between 0 and 1 indicating how much of passenger1's route
                 overlaps with passenger2's route in terms of fare.
         """
-        prefix = get_longest_prefix(route1=route1, route2=route2)
+        prefix = get_valid_shared_route(route1=route1, route2=route2)
         fare1 = self.get_fare_on_route(route=route1)
         fare_prefix = self.get_fare_on_route(route=prefix)
         return fare_prefix / fare1

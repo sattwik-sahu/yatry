@@ -1,6 +1,6 @@
 import numpy as np
 from yatry.utils.data.locations import Location
-from yatry.utils.helpers.route import get_longest_prefix
+from yatry.utils.helpers.route import get_valid_shared_route
 from yatry.utils.models import Passenger
 from yatry.utils.models.map import Map
 from yatry.utils.data.map import BHOPAL
@@ -235,12 +235,15 @@ def main():
                 passenger_table.add_column("Route", style="cyan")
                 passenger_table.add_column("Original Fare", style="yellow")
                 passenger_table.add_column("New Fare", style="green")
-                passenger_table.add_column("Savings", style="magenta")
+                passenger_table.add_column("Savings", style="dim magenta")
+                passenger_table.add_column("Savings (%)", style="magenta")
 
                 # Calculate new fare for each passenger
                 for passenger_ in group:
                     original_fare = BHOPAL.get_fare_on_route(
-                        BHOPAL._find_route(passenger_.source, passenger_.destination)
+                        route=BHOPAL._find_route(
+                            passenger_.source, passenger_.destination
+                        )
                     )
 
                     new_fare = original_fare * total_fare / sum_fare
@@ -253,6 +256,7 @@ def main():
                         f"₹{original_fare:.2f}",
                         f"₹{new_fare:.2f}",
                         f"[bold]₹{saving_amount:.2f}[/bold]",
+                        f"[bold]{100 * saving_amount / original_fare:.2f}[/bold]",
                     )
 
                 auto_table.add_row(
